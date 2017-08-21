@@ -384,7 +384,6 @@ var StepZilla = function (_Component) {
         value: function render() {
             var _this6 = this;
 
-            console.log('state@@@', this.state);
             var props = this.props;
 
             var compToRender = void 0;
@@ -415,13 +414,14 @@ var StepZilla = function (_Component) {
                     }
                 },
                 this.props.showSteps ? _react2.default.createElement(
-                    'ol',
-                    { className: 'progtrckr' },
+                    'div',
+                    { className: 'step-title-container' },
                     _react2.default.createElement(
                         'span',
                         {
+                            className: 'step-title',
                             style: {
-                                fontSize: '24px',
+                                fontSize: '20px',
                                 fontWeight: 'bold',
                                 fontStyle: 'normal',
                                 fontStretch: 'normal',
@@ -431,9 +431,13 @@ var StepZilla = function (_Component) {
                                 color: '#3b3b3b'
                             }
                         },
-                        this.props.steps[this.state.compState].name
+                        this.props.steps[this.state.compState].name.split('.')[1]
                     ),
-                    this.renderSteps()
+                    _react2.default.createElement(
+                        'ol',
+                        { className: 'progtrckr' },
+                        this.renderSteps()
+                    )
                 ) : _react2.default.createElement('span', null),
                 compToRender,
                 _react2.default.createElement(

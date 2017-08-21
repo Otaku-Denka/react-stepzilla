@@ -325,7 +325,6 @@ export default class StepZilla extends Component {
 
     // main render of stepzilla container
     render() {
-        console.log('state@@@', this.state);
         const { props } = this;
         let compToRender;
 
@@ -358,10 +357,11 @@ export default class StepZilla extends Component {
                 }}
             >
                 {this.props.showSteps
-                    ? <ol className="progtrckr">
+                    ? <div className="step-title-container">
                           <span
+                              className="step-title"
                               style={{
-                                  fontSize: '24px',
+                                  fontSize: '20px',
                                   fontWeight: 'bold',
                                   fontStyle: 'normal',
                                   fontStretch: 'normal',
@@ -371,10 +371,16 @@ export default class StepZilla extends Component {
                                   color: '#3b3b3b'
                               }}
                           >
-                              {this.props.steps[this.state.compState].name}
+                              {
+                                  this.props.steps[
+                                      this.state.compState
+                                  ].name.split('.')[1]
+                              }
                           </span>
-                          {this.renderSteps()}
-                      </ol>
+                          <ol className="progtrckr">
+                              {this.renderSteps()}
+                          </ol>
+                      </div>
                     : <span />}
 
                 {compToRender}
