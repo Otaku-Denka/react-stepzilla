@@ -359,6 +359,20 @@ export default class StepZilla extends Component {
             >
                 {this.props.showSteps
                     ? <ol className="progtrckr">
+                          <span
+                              style={{
+                                  fontSize: '24px',
+                                  fontWeight: 'bold',
+                                  fontStyle: 'normal',
+                                  fontStretch: 'normal',
+                                  lineHeight: 'normal',
+                                  letterSpacing: '0',
+                                  textAlign: 'left',
+                                  color: '#3b3b3b'
+                              }}
+                          >
+                              {this.props.steps[this.state.compState].name}
+                          </span>
                           {this.renderSteps()}
                       </ol>
                     : <span />}

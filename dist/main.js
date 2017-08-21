@@ -417,6 +417,22 @@ var StepZilla = function (_Component) {
                 this.props.showSteps ? _react2.default.createElement(
                     'ol',
                     { className: 'progtrckr' },
+                    _react2.default.createElement(
+                        'span',
+                        {
+                            style: {
+                                fontSize: '24px',
+                                fontWeight: 'bold',
+                                fontStyle: 'normal',
+                                fontStretch: 'normal',
+                                lineHeight: 'normal',
+                                letterSpacing: '0',
+                                textAlign: 'left',
+                                color: '#3b3b3b'
+                            }
+                        },
+                        this.props.steps[this.state.compState].name
+                    ),
                     this.renderSteps()
                 ) : _react2.default.createElement('span', null),
                 compToRender,
